@@ -1,0 +1,28 @@
+--Create a bookstore inventory database
+
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, title TEXT, author TEXT, genre TEXT, price INTEGER);
+
+INSERT INTO inventory VALUES (1, "Pride and Prejudice", "Jane Austen", "fiction", 16.99);
+INSERT INTO inventory VALUES (2, "The Secret History", "Donna Tartt", "fiction", 27.99);
+INSERT INTO inventory VALUES (3, "The Cruel Prince", "Holly Black", "young adult fantasy", 11.99);
+INSERT INTO inventory VALUES (4, "The Wicked King", "Holly Black", "young adult fantasy", 11.99);
+INSERT INTO inventory VALUES (5, "Queen of Nothing", "Holly Black", "young adult fantasy", 11.99);
+INSERT INTO inventory VALUES (6, "Book Lovers", "Emily Henry", "romance", 13.99);
+INSERT INTO inventory VALUES (7, "Eligible", "Curtis Sittenfeld", "romance", 16.99);
+INSERT INTO inventory VALUES (8, "Beach Read", "Emily Henry", "romance", 13.99);
+INSERT INTO inventory VALUES (9, "Gideon the Ninth", "Tamsyn Muir", "fantasy", 27.99);
+INSERT INTO inventory VALUES (10, "Nona the Ninth", "Tamsyn Muir", "fantasy", 27.99);
+INSERT INTO inventory VALUES (11, "Harrow the Ninth", "Tamsyn Muir", "fantasy", 27.99);
+INSERT INTO inventory VALUES (12, "Truthwich", "Susan Dennard", "fantasy", 18.99);
+INSERT INTO inventory VALUES (13, "Windwitch", "Susan Dennard", "fantasy", 18.99);
+INSERT INTO inventory VALUES (14, "Bloodwitch", "Susan Dennard", "fantasy", 18.99);
+INSERT INTO inventory VALUES (15, "Witchshadow", "Susan Dennard", "fantasy", 18.99);
+
+--display the database ordered by price
+SELECT * FROM inventory ORDER BY price;
+
+--what is the most expensive price
+SELECT MAX(price) FROM inventory;
+
+--what is the avg price of items in the fantasy genre
+SELECT AVG(price) "avg fantasy price" FROM inventory WHERE genre="fantasy"
